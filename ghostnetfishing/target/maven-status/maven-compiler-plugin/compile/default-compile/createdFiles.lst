@@ -1,0 +1,14 @@
+ghostnetfishing/converter/BergendePersonConverter.class
+ghostnetfishing/TestApp.class
+ghostnetfishing/rest/GeisternetzResource.class
+ghostnetfishing/util/JPAUtil.class
+ghostnetfishing/model/Geisternetz.class
+ghostnetfishing/dao/GeisternetzDAO.class
+ghostnetfishing/dao/MeldendePersonDAO.class
+ghostnetfishing/controller/GeisternetzBean.class
+ghostnetfishing/controller/GeisternetzKartenBean.class
+ghostnetfishing/model/BergendePerson.class
+ghostnetfishing/model/GeisternetzStatus.class
+ghostnetfishing/dao/BergendePersonDAO.class
+ghostnetfishing/rest/RestApplication.class
+ghostnetfishing/model/MeldendePerson.class
