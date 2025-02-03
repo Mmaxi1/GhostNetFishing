@@ -5,7 +5,6 @@
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <!-- JSF Konfiguration -->
   <context-param>
     <param-name>javax.faces.PROJECT_STAGE</param-name>
     <param-value>Development</param-value>
@@ -16,12 +15,10 @@
     <param-value>resources.application</param-value>
   </context-param>
 
-  <!-- Weld Listener für CDI -->
   <listener>
     <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
   </listener>
 
-  <!-- JSF Servlet -->
   <servlet>
     <servlet-name>FacesServlet</servlet-name>
     <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class>
@@ -33,13 +30,11 @@
     <url-pattern>*.xhtml</url-pattern>
   </servlet-mapping>
 
-  <!-- Welcome File -->
   <welcome-file-list>
     <welcome-file>index.xhtml</welcome-file>
   </welcome-file-list>
 
 
-  <!-- JNDI Datenquelle für Hibernate -->
   <resource-ref>
     <description>MySQL Datenquelle für GhostNet Fishing</description>
     <res-ref-name>jdbc/ghostnet_fishing</res-ref-name>

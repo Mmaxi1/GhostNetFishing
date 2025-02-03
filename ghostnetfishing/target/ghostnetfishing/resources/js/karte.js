@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("🌍 Leaflet.js Map wird initialisiert...");
 
-    // 🌍 Initialisiere die Karte mit Standard-Koordinaten
     var map = L.map("map").setView([48.8566, 2.3522], 6);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var markerGroup = L.layerGroup().addTo(map);
 
-    // ✅ Funktion zum Laden und Aktualisieren der Karte
     function ladeGeisternetze() {
         console.log("🔄 Lade Geisternetz-Daten...");
 

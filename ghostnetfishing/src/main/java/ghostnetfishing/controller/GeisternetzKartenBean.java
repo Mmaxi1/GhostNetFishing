@@ -40,7 +40,7 @@ public class GeisternetzKartenBean implements Serializable {
                     "Geisternetz ID: " + netz.getId()
             );
             marker.setTitle("Geisternetz ID: " + netz.getId());
-            marker.setData(netz.getId()); // Speichert die ID für spätere Nutzung
+            marker.setData(netz.getId());
             marker.setClickable(true);
             gmapModel.addOverlay(marker);
         }

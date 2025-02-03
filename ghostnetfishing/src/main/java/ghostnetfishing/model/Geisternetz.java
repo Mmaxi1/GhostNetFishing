@@ -12,7 +12,7 @@ public class Geisternetz {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private GeisternetzStatus status = GeisternetzStatus.GEMELDET; // Standardwert für neue Instanzen
+    private GeisternetzStatus status = GeisternetzStatus.GEMELDET;
 
     @Column
     private int groesse;
@@ -30,13 +30,13 @@ public class Geisternetz {
     @JoinColumn(name = "bergendePerson_id")
     private BergendePerson bergendePerson;
 
-    @ManyToOne(cascade = CascadeType.PERSIST) // Fügt automatisch eine neue MeldendePerson in die DB ein
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "meldendePerson_id")
     private MeldendePerson meldendePerson;
 
     // Konstruktor
     public Geisternetz() {
-        this.status = GeisternetzStatus.GEMELDET; // Setzt den Standardwert für neue Instanzen
+        this.status = GeisternetzStatus.GEMELDET;
     }
 
     // Getter und Setter

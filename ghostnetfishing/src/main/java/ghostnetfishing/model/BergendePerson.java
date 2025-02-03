@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "bergende_person") // Falls du einen konsistenten Tabellennamen in der DB möchtest
+@Table(name = "bergende_person")
 public class BergendePerson implements Serializable {
 
     @Id
@@ -65,7 +65,6 @@ public class BergendePerson implements Serializable {
         this.telefonnummer = telefonnummer;
     }
 
-    // 🛠 equals() und hashCode(), um Objekte in Listen/Maps korrekt zu vergleichen
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -79,7 +78,6 @@ public class BergendePerson implements Serializable {
         return Objects.hash(id);
     }
 
-    // 🛠 Verbessertes `toString()` für Debugging
     @Override
     public String toString() {
         return "BergendePerson{" +

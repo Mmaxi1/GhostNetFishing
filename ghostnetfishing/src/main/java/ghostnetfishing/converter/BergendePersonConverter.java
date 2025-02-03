@@ -11,7 +11,7 @@ import jakarta.faces.convert.FacesConverter;
 @FacesConverter(value = "bergendePersonConverter")
 public class BergendePersonConverter implements Converter<BergendePerson> {
 
-    private final BergendePersonDAO bergendePersonDAO = new BergendePersonDAO(); // 🔥 Stellt sicher, dass DAO existiert
+    private final BergendePersonDAO bergendePersonDAO = new BergendePersonDAO();
 
     @Override
     public BergendePerson getAsObject(FacesContext context, UIComponent component, String value) {

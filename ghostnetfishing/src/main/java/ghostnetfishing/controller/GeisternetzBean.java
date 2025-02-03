@@ -136,7 +136,6 @@ public class GeisternetzBean implements Serializable {
         }
     }
 
-    // 📌 STATUSÄNDERUNG: BERGUNG BEVORSTEHEND
     public void setStatusToBergungBevorstehend(Geisternetz netz) {
         System.out.println("DEBUG: setStatusToBergungBevorstehend() aufgerufen für Geisternetz ID: " + (netz != null ? netz.getId() : "null"));
 
@@ -147,7 +146,6 @@ public class GeisternetzBean implements Serializable {
             return;
         }
 
-        // Neue Bergende Person finden
         BergendePerson neuePerson = bergendePersonDAO.findById(selectedBergendePersonId);
         if (neuePerson == null) {
             FacesContext.getCurrentInstance().addMessage(null,
@@ -163,18 +161,15 @@ public class GeisternetzBean implements Serializable {
             return;
         }
 
-        // Prüfen, ob eine Person bereits zugewiesen war und überschreiben
         if (netz.getBergendePerson() != null) {
             System.out.println("DEBUG: Geisternetz ID " + netz.getId() + " war reserviert durch Person ID: "
                     + netz.getBergendePerson().getId() + ". Wird jetzt überschrieben mit Person ID: "
                     + neuePerson.getId());
         }
 
-        // ✅ Bergende Person aktualisieren & Status setzen
         netz.setBergendePerson(neuePerson);
         netz.setStatus(GeisternetzStatus.BERGUNG_BEVORSTEHEND);
 
-        // ✅ In der Datenbank speichern
         try {
             geisternetzDAO.update(netz);
             System.out.println("DEBUG: Geisternetz ID " + netz.getId() + " wurde erfolgreich aktualisiert mit neuer Person ID: "
@@ -194,7 +189,6 @@ public class GeisternetzBean implements Serializable {
         }
     }
 
-    // 📌 STATUSÄNDERUNG: GEBORGEN
     public void setStatusToGeborgen(Geisternetz netz) {
         if (netz.getBergendePerson() == null) {
             FacesContext.getCurrentInstance().addMessage(null,
@@ -272,7 +266,6 @@ public class GeisternetzBean implements Serializable {
         }
     }
 
-    // Getter und Setter
 
     public boolean isEditMode() {
         return editMode;
@@ -383,10 +376,8 @@ public class GeisternetzBean implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_INFO, "Erfolg", "Bergende Person erfolgreich hinzugefügt."));
 
-            // Formular zurücksetzen
             selectedBergendePerson = new BergendePerson();
 
-            // 🔍 Überprüfe, ob das UI-Update wirklich aufgerufen wird
             System.out.println("DEBUG: PrimeFaces AJAX Update für bergendePersonForm wird aufgerufen.");
             PrimeFaces.current().ajax().update("bergendePersonForm", "addPersonForm");
 
