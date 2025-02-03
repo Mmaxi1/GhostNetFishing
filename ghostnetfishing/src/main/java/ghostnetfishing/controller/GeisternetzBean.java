@@ -120,10 +120,8 @@ public class GeisternetzBean implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_INFO, "Erfolg", "Geisternetz erfolgreich gemeldet!"));
 
-            // 🚀 Tabelle mit den neuen Daten aktualisieren!
             aktualisiereGeisternetzListe();
 
-            // Formular zurücksetzen
             geisternetz = new Geisternetz();
             meldendePerson = new MeldendePerson();
 
@@ -175,7 +173,6 @@ public class GeisternetzBean implements Serializable {
             System.out.println("DEBUG: Geisternetz ID " + netz.getId() + " wurde erfolgreich aktualisiert mit neuer Person ID: "
                     + neuePerson.getId());
 
-            // ✅ UI aktualisieren
             aktualisiereGeisternetzListe();
             PrimeFaces.current().ajax().update("geisternetzForm");
 
@@ -267,9 +264,6 @@ public class GeisternetzBean implements Serializable {
     }
 
 
-    public boolean isEditMode() {
-        return editMode;
-    }
 
     public List<BergendePerson> getAlleBergendenPersonen() {
         return bergendePersonDAO.findAll();
@@ -283,10 +277,6 @@ public class GeisternetzBean implements Serializable {
         this.selectedBergendePerson = selectedBergendePerson;
     }
 
-    public void setEditMode(boolean editMode) {
-        this.editMode = editMode;
-    }
-
     public Geisternetz getSelectedGeisternetz() {
         return selectedGeisternetz;
     }
@@ -295,7 +285,6 @@ public class GeisternetzBean implements Serializable {
         this.selectedGeisternetz = selectedGeisternetz;
     }
 
-    // Getter und Setter für die Variable
     public Long getSelectedBergendePersonId() {
         return selectedBergendePersonId;
     }
@@ -317,10 +306,6 @@ public class GeisternetzBean implements Serializable {
 
     public List<Geisternetz> getAlleGeisternetze() {
         return alleGeisternetze;
-    }
-
-    public List<Geisternetz> getGefilterteGeisternetze() {
-        return gefilterteGeisternetze;
     }
 
     public List<String> getStatusOptions() {
@@ -369,7 +354,6 @@ public class GeisternetzBean implements Serializable {
             bergendePersonDAO.save(selectedBergendePerson);
             System.out.println("DEBUG: Speichern erfolgreich für: " + selectedBergendePerson);
 
-            // 🔍 Überprüfe, ob die Liste aktualisiert wird
             List<BergendePerson> aktualisierteListe = bergendePersonDAO.findAll();
             System.out.println("DEBUG: Anzahl der bergenden Personen nach Speichern: " + aktualisierteListe.size());
 

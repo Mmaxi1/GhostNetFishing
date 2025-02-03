@@ -59,7 +59,7 @@ public class GeisternetzDAO implements Serializable {
 
     public void delete(Geisternetz geisternetz) {
         System.out.println("DEBUG: Starting delete operation for Geisternetz with ID: " + geisternetz.getId());
-        EntityManager em = emf.createEntityManager(); // EntityManager hier erzeugen
+        EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
             System.out.println("DEBUG: Merging Geisternetz before deletion: " + geisternetz);
@@ -82,7 +82,7 @@ public class GeisternetzDAO implements Serializable {
 
     public Geisternetz findById(Long id) {
         System.out.println("DEBUG: Starting findById operation for Geisternetz with ID: " + id);
-        EntityManager em = emf.createEntityManager(); // EntityManager hier erzeugen
+        EntityManager em = emf.createEntityManager();
         try {
             Geisternetz result = em.find(Geisternetz.class, id);
             System.out.println("DEBUG: Found Geisternetz: " + result);
@@ -95,7 +95,7 @@ public class GeisternetzDAO implements Serializable {
 
     public List<Geisternetz> findAll() {
         System.out.println("DEBUG: Starting findAll operation.");
-        EntityManager em = emf.createEntityManager(); // EntityManager hier erzeugen
+        EntityManager em = emf.createEntityManager();
         try {
             List<Geisternetz> results = em.createQuery("SELECT g FROM Geisternetz g", Geisternetz.class).getResultList();
             System.out.println("DEBUG: Found " + results.size() + " Geisternetze.");

@@ -16,11 +16,6 @@ public class MeldendePersonDAO implements Serializable {
     private EntityManager em;
 
     @Transactional
-    public void save(MeldendePerson meldendePerson) {
-        em.persist(meldendePerson);
-    }
-
-    @Transactional
     public void update(MeldendePerson meldendePerson) {
         em.merge(meldendePerson);
     }
@@ -29,10 +24,6 @@ public class MeldendePersonDAO implements Serializable {
     public void delete(MeldendePerson meldendePerson) {
         MeldendePerson toDelete = em.merge(meldendePerson);
         em.remove(toDelete);
-    }
-
-    public MeldendePerson findById(Long id) {
-        return em.find(MeldendePerson.class, id);
     }
 
     public List<MeldendePerson> findAll() {

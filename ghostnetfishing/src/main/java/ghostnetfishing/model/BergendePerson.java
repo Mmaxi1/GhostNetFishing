@@ -21,18 +21,15 @@ public class BergendePerson implements Serializable {
     @Column(nullable = false, unique = true)
     private String telefonnummer;
 
-    // 🛠 Standardkonstruktor (Pflicht für JPA!)
     public BergendePerson() {
     }
 
-    // 🛠 Konstruktor für einfache Instanziierung
     public BergendePerson(String name, String email, String telefonnummer) {
         this.name = name;
         this.email = email;
         this.telefonnummer = telefonnummer;
     }
 
-    // 🛠 Getter und Setter
     public Long getId() {
         return id;
     }

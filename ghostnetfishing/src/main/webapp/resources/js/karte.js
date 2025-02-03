@@ -10,23 +10,23 @@ document.addEventListener("DOMContentLoaded", function () {
     var markerGroup = L.layerGroup().addTo(map);
 
     function ladeGeisternetze() {
-        console.log("🔄 Lade Geisternetz-Daten...");
+        console.log("Lade Geisternetz-Daten...");
 
         fetch("http://localhost:8080/ghostnetfishing_war_exploded/rest/geisternetze")
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`🚨 Fehler: Server antwortete mit Status ${response.status}`);
+                    throw new Error(`Fehler: Server antwortete mit Status ${response.status}`);
                 }
                 return response.json();
             })
             .then(data => {
-                console.log("📌 Geisternetz-Daten empfangen:", data);
+                console.log("Geisternetz-Daten empfangen:", data);
 
-                markerGroup.clearLayers(); // 🔥 Entferne alte Marker, bevor neue hinzugefügt werden
+                markerGroup.clearLayers();
 
                 data.forEach(net => {
                     if (!net.latitude || !net.longitude) {
-                        console.warn("⚠️ Geisternetz hat keine gültigen Koordinaten:", net);
+                        console.warn("Geisternetz hat keine gültigen Koordinaten:", net);
                         return;
                     }
 
@@ -41,21 +41,18 @@ document.addEventListener("DOMContentLoaded", function () {
                         `);
                 });
 
-                console.log("✅ Karte erfolgreich aktualisiert!");
+                console.log("Karte erfolgreich aktualisiert!");
             })
-            .catch(error => console.error("❌ Fehler beim Laden der Geisternetz-Daten:", error));
+            .catch(error => console.error("Fehler beim Laden der Geisternetz-Daten:", error));
     }
 
-    // ✅ Funktionen global machen (wichtig für Buttons in `karte.xhtml`)
     window.ladeGeisternetze = ladeGeisternetze;
     window.aktualisiereKarte = function () {
-        console.log("🔄 Manuelle Aktualisierung gestartet...");
+        console.log("Manuelle Aktualisierung gestartet...");
         ladeGeisternetze();
     };
 
-    // ⏳ Automatische Aktualisierung alle 10 Sekunden
     setInterval(ladeGeisternetze, 10000);
 
-    // 📌 Beim ersten Laden sofort Daten holen
     ladeGeisternetze();
 });

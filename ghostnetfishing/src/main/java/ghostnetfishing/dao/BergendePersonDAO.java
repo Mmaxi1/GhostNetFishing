@@ -11,7 +11,7 @@ import java.util.List;
 @ApplicationScoped
 public class BergendePersonDAO implements Serializable {
 
-    private EntityManager em = JPAUtil.getEntityManager(); // 🔥 Stellt sicher, dass `EntityManager` existiert
+    private EntityManager em = JPAUtil.getEntityManager();
 
     public void save(BergendePerson bergendePerson) {
         EntityTransaction transaction = em.getTransaction();

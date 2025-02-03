@@ -34,12 +34,10 @@ public class Geisternetz {
     @JoinColumn(name = "meldendePerson_id")
     private MeldendePerson meldendePerson;
 
-    // Konstruktor
     public Geisternetz() {
         this.status = GeisternetzStatus.GEMELDET;
     }
 
-    // Getter und Setter
     public Long getId() {
         return id;
     }

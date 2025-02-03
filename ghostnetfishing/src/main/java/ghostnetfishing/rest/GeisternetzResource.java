@@ -11,10 +11,10 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class GeisternetzResource {
 
-    private GeisternetzDAO geisternetzDAO = new GeisternetzDAO(); // 🔥 Instanziierung direkt
+    private GeisternetzDAO geisternetzDAO = new GeisternetzDAO();
 
     @GET
     public List<Geisternetz> getGeisternetzData() {
-        return geisternetzDAO.findAll();  // 🔥 Direkter Aufruf der Methode aus GeisternetzDAO
+        return geisternetzDAO.findAll();
     }
 }
