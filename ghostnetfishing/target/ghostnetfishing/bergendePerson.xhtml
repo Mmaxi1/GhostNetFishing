@@ -151,6 +151,10 @@
                             <p:tag value="#{netz.status}" severity="warning"/>
                         </p:column>
 
+                        <p:column headerText="Bergende Person">
+                            <h:outputText value="#{netz.bergendePerson != null ? netz.bergendePerson.name : 'Nicht zugewiesen'}"/>
+                        </p:column>
+
                         <p:column headerText="Aktion">
                             <p:commandButton value="🌊 Als geborgen melden"
                                              action="#{geisternetzBean.setStatusToGeborgen(netz)}"

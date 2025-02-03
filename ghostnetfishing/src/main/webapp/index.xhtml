@@ -132,10 +132,15 @@
     </h:form>
 
     <p:dialog id="editDialog" widgetVar="editDialog" header="Geisternetz bearbeiten"
-              modal="true" resizable="false" width="600">
+              modal="true" resizable="false" width="900px" height="750px">
 
         <h:form id="editForm">
             <p:panelGrid columns="2" style="width:100%; font-size: 16px;">
+
+                <f:facet name="header">
+                    <h:outputText value="📌 Geisternetz-Details"
+                                  style="font-weight: bold; font-size: 22px;"/>
+                </f:facet>
 
                 <p:outputLabel value="ID:" style="font-weight: bold;" />
                 <h:outputText value="#{geisternetzBean.selectedGeisternetz.id}" />
@@ -160,6 +165,13 @@
                 <p:outputLabel value="Längengrad:" style="font-weight: bold;" />
                 <p:inputNumber value="#{geisternetzBean.selectedGeisternetz.longitude}" decimalPlaces="6"
                                style="width:100%;" />
+
+                <p:outputLabel value="Bergende Person:" style="font-weight: bold;" />
+                <h:outputText value="#{geisternetzBean.selectedGeisternetz.bergendePerson != null ? geisternetzBean.selectedGeisternetz.bergendePerson.name : 'Keine'}" />
+
+                <p:outputLabel value="Meldende Person:" style="font-weight: bold;" />
+                <h:outputText value="#{geisternetzBean.selectedGeisternetz.meldendePerson != null ? geisternetzBean.selectedGeisternetz.meldendePerson.name : 'Keine'}" />
+
             </p:panelGrid>
 
             <div style="text-align: center; margin-top: 20px;">

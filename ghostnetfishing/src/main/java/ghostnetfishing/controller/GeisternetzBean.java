@@ -79,7 +79,7 @@ public class GeisternetzBean implements Serializable {
 
         if (selectedGeisternetz == null) {
             System.out.println("ERROR: selectedGeisternetz ist null! Es wird ein neues Objekt erstellt.");
-            selectedGeisternetz = new Geisternetz();  // Fallback, falls es null ist
+            selectedGeisternetz = new Geisternetz();
         }
 
         try {

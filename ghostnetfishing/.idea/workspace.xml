@@ -9,28 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="491f30b9-86ca-4305-b926-d16e3cd28dae" name="Changes" comment="New">
+    <list default="true" id="491f30b9-86ca-4305-b926-d16e3cd28dae" name="Changes" comment="Bug Fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ghostnetfishing/controller/GeisternetzBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghostnetfishing/controller/GeisternetzBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ghostnetfishing/dao/BergendePersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghostnetfishing/dao/BergendePersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ghostnetfishing/dao/GeisternetzDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghostnetfishing/dao/GeisternetzDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ghostnetfishing/dao/MeldendePersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghostnetfishing/dao/MeldendePersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ghostnetfishing/model/BergendePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghostnetfishing/model/BergendePerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ghostnetfishing/model/Geisternetz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghostnetfishing/model/Geisternetz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ghostnetfishing/rest/GeisternetzResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghostnetfishing/rest/GeisternetzResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ghostnetfishing/rest/RestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghostnetfishing/rest/RestApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/karte.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/karte.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ghostnetfishing/TestApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ghostnetfishing/TestApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ghostnetfishing/controller/GeisternetzBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ghostnetfishing/controller/GeisternetzBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ghostnetfishing/dao/MeldendePersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ghostnetfishing/dao/MeldendePersonDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ghostnetfishing/model/BergendePerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ghostnetfishing/model/BergendePerson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ghostnetfishing/model/Geisternetz.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ghostnetfishing/model/Geisternetz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/TestApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/TestApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/controller/GeisternetzBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/controller/GeisternetzBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/dao/MeldendePersonDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/dao/MeldendePersonDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/model/BergendePerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/model/BergendePerson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/model/Geisternetz.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/model/Geisternetz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/resources/js/karte.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/resources/js/karte.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/bergendePerson.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bergendePerson.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/bergendePerson.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/bergendePerson.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/index.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -479,7 +464,7 @@
       <workItem from="1738434686204" duration="17930000" />
       <workItem from="1738497925920" duration="13300000" />
       <workItem from="1738598314223" duration="8000" />
-      <workItem from="1738598388780" duration="7358000" />
+      <workItem from="1738598388780" duration="10984000" />
     </task>
     <task id="LOCAL-00001" summary="New">
       <option name="closed" value="true" />
@@ -521,7 +506,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738607502024</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Bug Fixes">
+      <option name="closed" value="true" />
+      <created>1738609094472</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1738609094472</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,7 +533,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New" />
-    <option name="LAST_COMMIT_MESSAGE" value="New" />
+    <MESSAGE value="Bug Fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
