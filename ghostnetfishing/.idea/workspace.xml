@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="491f30b9-86ca-4305-b926-d16e3cd28dae" name="Changes" comment="New">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bergendePerson.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bergendePerson.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/bergendePerson.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/bergendePerson.xhtml" afterDir="false" />
-    </list>
+    <list default="true" id="491f30b9-86ca-4305-b926-d16e3cd28dae" name="Changes" comment="New" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -422,7 +418,7 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="StructureViewState">
-    <option name="selectedTab" value="Logical" />
+    <option name="selectedTab" value="JSPX" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -461,7 +457,7 @@
       <workItem from="1738434686204" duration="17930000" />
       <workItem from="1738497925920" duration="13300000" />
       <workItem from="1738598314223" duration="8000" />
-      <workItem from="1738598388780" duration="387000" />
+      <workItem from="1738598388780" duration="990000" />
     </task>
     <task id="LOCAL-00001" summary="New">
       <option name="closed" value="true" />
@@ -479,7 +475,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738598512587</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="New">
+      <option name="closed" value="true" />
+      <created>1738599354143</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738599354143</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
