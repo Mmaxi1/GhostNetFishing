@@ -26,7 +26,6 @@ public class GeisternetzBean implements Serializable {
 
     private List<Geisternetz> alleGeisternetze;
     private List<Geisternetz> gefilterteGeisternetze;
-    private String filterStatus;
     private List<String> statusOptions;
     private List<BergendePerson> alleBergendenPersonen;
 
@@ -51,10 +50,8 @@ public class GeisternetzBean implements Serializable {
 
     @PostConstruct
     public void init() {
-        System.out.println("DEBUG: Initialisierung von GeisternetzBean gestartet.");
         try {
             alleBergendenPersonen = bergendePersonDAO.findAll(); // ✅ Liste wird beim Start geladen
-            System.out.println("DEBUG: Geladene Personen: " + alleBergendenPersonen.size());
             selectedGeisternetz = new Geisternetz();  // Initialisiere das Objekt, um NullPointerException zu vermeiden
 
             alleGeisternetze = geisternetzDAO.findAll();
@@ -68,27 +65,22 @@ public class GeisternetzBean implements Serializable {
             anonymMelden = false;
             editMode = false;
 
-            System.out.println("DEBUG: GeisternetzBean erfolgreich initialisiert.");
         } catch (Exception e) {
             System.err.println("ERROR: Fehler bei der Initialisierung von GeisternetzBean: " + e.getMessage());
         }
     }
 
     public void speichernOderAktualisieren() {
-        System.out.println("DEBUG: Speichern oder Aktualisieren gestartet.");
 
         if (selectedGeisternetz == null) {
-            System.out.println("ERROR: selectedGeisternetz ist null! Es wird ein neues Objekt erstellt.");
             selectedGeisternetz = new Geisternetz();
         }
 
         try {
             if (selectedGeisternetz.getId() != null) {
                 geisternetzDAO.update(selectedGeisternetz);
-                System.out.println("DEBUG: Update erfolgreich!");
             } else {
                 geisternetzDAO.save(selectedGeisternetz);
-                System.out.println("DEBUG: Neues Geisternetz gespeichert!");
             }
 
             FacesContext.getCurrentInstance().addMessage(null,
@@ -104,7 +96,6 @@ public class GeisternetzBean implements Serializable {
     }
 
     public void meldeGeisternetz() {
-        System.out.println("DEBUG: Neue Meldung eines Geisternetzes gestartet.");
 
         if (geisternetz == null) {
             geisternetz = new Geisternetz();
@@ -120,7 +111,6 @@ public class GeisternetzBean implements Serializable {
 
         try {
             geisternetzDAO.save(geisternetz);
-            System.out.println("DEBUG: Neues Geisternetz erfolgreich gemeldet!");
 
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_INFO, "Erfolg", "Geisternetz erfolgreich gemeldet!"));
@@ -140,12 +130,10 @@ public class GeisternetzBean implements Serializable {
     }
 
     public void setStatusToBergungBevorstehend(Geisternetz netz) {
-        System.out.println("DEBUG: setStatusToBergungBevorstehend() aufgerufen für Geisternetz ID: " + (netz != null ? netz.getId() : "null"));
 
         if (selectedBergendePersonId == null) {
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_ERROR, "Fehler", "Bitte eine bergende Person auswählen."));
-            System.out.println("DEBUG: Keine bergende Person ausgewählt.");
             return;
         }
 
@@ -153,30 +141,21 @@ public class GeisternetzBean implements Serializable {
         if (neuePerson == null) {
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_ERROR, "Fehler", "Ausgewählte Person nicht gefunden."));
-            System.out.println("DEBUG: Keine BergendePerson mit ID " + selectedBergendePersonId + " gefunden.");
             return;
         }
 
         if (netz == null) {
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_ERROR, "Fehler", "Geisternetz ist null."));
-            System.out.println("DEBUG: Geisternetz ist null.");
             return;
         }
 
-        if (netz.getBergendePerson() != null) {
-            System.out.println("DEBUG: Geisternetz ID " + netz.getId() + " war reserviert durch Person ID: "
-                    + netz.getBergendePerson().getId() + ". Wird jetzt überschrieben mit Person ID: "
-                    + neuePerson.getId());
-        }
 
         netz.setBergendePerson(neuePerson);
         netz.setStatus(GeisternetzStatus.BERGUNG_BEVORSTEHEND);
 
         try {
             geisternetzDAO.update(netz);
-            System.out.println("DEBUG: Geisternetz ID " + netz.getId() + " wurde erfolgreich aktualisiert mit neuer Person ID: "
-                    + neuePerson.getId());
 
             aktualisiereGeisternetzListe();
             PrimeFaces.current().ajax().update("geisternetzForm");
@@ -186,7 +165,6 @@ public class GeisternetzBean implements Serializable {
         } catch (Exception e) {
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_ERROR, "Fehler", "Fehler beim Speichern der Änderung."));
-            System.out.println("DEBUG: Fehler beim Überschreiben von Geisternetz ID " + netz.getId());
             e.printStackTrace();
         }
     }
@@ -204,7 +182,6 @@ public class GeisternetzBean implements Serializable {
 
         FacesContext.getCurrentInstance().addMessage(null,
                 new FacesMessage(FacesMessage.SEVERITY_INFO, "Erfolg", "Geisternetz wurde als geborgen markiert."));
-        System.out.println("DEBUG: Geisternetz ID " + netz.getId() + " wurde als geborgen markiert.");
     }
 
     public void loescheGeisternetz(Geisternetz netz) {
@@ -218,12 +195,8 @@ public class GeisternetzBean implements Serializable {
             return;
         }
 
-        System.out.println("DEBUG: Löschen gestartet für Geisternetz mit ID: " + netz.getId());
-
         try {
             geisternetzDAO.delete(netz);
-            System.out.println("DEBUG: Geisternetz mit ID " + netz.getId() + " wurde erfolgreich gelöscht.");
-
             aktualisiereGeisternetzListe();
             PrimeFaces.current().ajax().update("geisternetzForm messages");
 
@@ -335,26 +308,21 @@ public class GeisternetzBean implements Serializable {
 
         if (selectedBergendePerson.getName() == null || selectedBergendePerson.getName().trim().isEmpty() ||
                 selectedBergendePerson.getTelefonnummer() == null || selectedBergendePerson.getTelefonnummer().trim().isEmpty()) {
-            System.out.println("DEBUG: Name oder Telefonnummer fehlt! Speichern abgebrochen.");
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_ERROR, "Fehler", "Bitte Name und Telefonnummer eingeben."));
             return;
         }
 
         try {
-            System.out.println("DEBUG: Speichern der Person gestartet: " + selectedBergendePerson);
             bergendePersonDAO.save(selectedBergendePerson);
-            System.out.println("DEBUG: Speichern erfolgreich für: " + selectedBergendePerson);
 
             List<BergendePerson> aktualisierteListe = bergendePersonDAO.findAll();
-            System.out.println("DEBUG: Anzahl der bergenden Personen nach Speichern: " + aktualisierteListe.size());
 
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_INFO, "Erfolg", "Bergende Person erfolgreich hinzugefügt."));
 
             selectedBergendePerson = new BergendePerson();
 
-            System.out.println("DEBUG: PrimeFaces AJAX Update für bergendePersonForm wird aufgerufen.");
             PrimeFaces.current().ajax().update("bergendePersonForm", "addPersonForm");
 
         } catch (Exception e) {
