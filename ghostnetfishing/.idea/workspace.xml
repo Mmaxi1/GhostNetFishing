@@ -9,12 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="491f30b9-86ca-4305-b926-d16e3cd28dae" name="Changes" comment="Bug Fixes">
+    <list default="true" id="491f30b9-86ca-4305-b926-d16e3cd28dae" name="Changes" comment="Table fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ghostnetfishing/controller/GeisternetzBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghostnetfishing/controller/GeisternetzBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bergendePerson.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bergendePerson.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/bergendePerson.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/bergendePerson.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ghostnetfishing/model/MeldendePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghostnetfishing/model/MeldendePerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ghostnetfishing/controller/GeisternetzBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ghostnetfishing/controller/GeisternetzBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ghostnetfishing/model/MeldendePerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ghostnetfishing/model/MeldendePerson.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/controller/GeisternetzBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/controller/GeisternetzBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/model/MeldendePerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/WEB-INF/classes/ghostnetfishing/model/MeldendePerson.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ghostnetfishing/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ghostnetfishing/index.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -425,7 +427,7 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="StructureViewState">
-    <option name="selectedTab" value="JSPX" />
+    <option name="selectedTab" value="Logical" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -464,7 +466,7 @@
       <workItem from="1738434686204" duration="17930000" />
       <workItem from="1738497925920" duration="13300000" />
       <workItem from="1738598314223" duration="8000" />
-      <workItem from="1738598388780" duration="10984000" />
+      <workItem from="1738598388780" duration="15237000" />
     </task>
     <task id="LOCAL-00001" summary="New">
       <option name="closed" value="true" />
@@ -514,7 +516,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738609094472</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Table fixes">
+      <option name="closed" value="true" />
+      <created>1738612908870</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1738612908870</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,32 +544,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New" />
     <MESSAGE value="Bug Fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ghostnetfishing/model/MeldendePerson.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ghostnetfishing/model/MeldendePerson.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ghostnetfishing/model/MeldendePerson.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ghostnetfishing/model/MeldendePerson.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Table fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Table fixes" />
   </component>
 </project>

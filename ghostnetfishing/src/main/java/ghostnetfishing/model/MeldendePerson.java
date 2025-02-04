@@ -9,10 +9,10 @@ public class MeldendePerson {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = true) // NULL-Werte erlaubt
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = true) // NULL-Werte erlaubt
     private String telefonnummer;
 
     public MeldendePerson() {
@@ -31,7 +31,7 @@ public class MeldendePerson {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = (name != null && name.trim().isEmpty()) ? null : name;
     }
 
     public String getTelefonnummer() {
@@ -39,7 +39,7 @@ public class MeldendePerson {
     }
 
     public void setTelefonnummer(String telefonnummer) {
-        this.telefonnummer = telefonnummer;
+        this.telefonnummer = (telefonnummer != null && telefonnummer.trim().isEmpty()) ? null : telefonnummer;
     }
 
     @Override

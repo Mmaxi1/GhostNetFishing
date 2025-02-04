@@ -110,6 +110,11 @@ public class GeisternetzBean implements Serializable {
             geisternetz = new Geisternetz();
         }
 
+        if (anonymMelden) {
+            meldendePerson.setName(null);
+            meldendePerson.setTelefonnummer(null);
+        }
+
         geisternetz.setMeldendePerson(meldendePerson);
         geisternetz.setStatus(GeisternetzStatus.GEMELDET);
 
@@ -246,24 +251,11 @@ public class GeisternetzBean implements Serializable {
         editMode = false;
     }
 
-    public void updateGefilterteGeisternetze() {
-        if (filterStatus == null || filterStatus.isEmpty()) {
-            gefilterteGeisternetze = alleGeisternetze;
-        } else {
-            gefilterteGeisternetze = alleGeisternetze.stream()
-                    .filter(netz -> netz.getStatus().name().equalsIgnoreCase(filterStatus))
-                    .toList();
-        }
-    }
-
     public void toggleAnonymMelden() {
         if (anonymMelden) {
-            meldendePerson.setName("");
-            meldendePerson.setTelefonnummer("");
+            meldendePerson = new MeldendePerson(); // Setzt Name und Telefonnummer auf NULL
         }
     }
-
-
 
     public List<BergendePerson> getAlleBergendenPersonen() {
         return bergendePersonDAO.findAll();
